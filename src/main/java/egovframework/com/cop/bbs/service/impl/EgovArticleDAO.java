@@ -12,6 +12,7 @@ import egovframework.com.cop.bbs.service.BoardVO;
 @Repository("EgovArticleDAO")
 public class EgovArticleDAO extends EgovComAbstractDAO {
 
+	@SuppressWarnings("deprecation")
 	public List<?> selectArticleList(BoardVO boardVO) {
 		return list("BBSArticle.selectArticleList", boardVO);
 	}
@@ -49,10 +50,12 @@ public class EgovArticleDAO extends EgovComAbstractDAO {
 		
 	}
 
+	@SuppressWarnings({ "unchecked", "deprecation" })
 	public List<BoardVO> selectNoticeArticleList(BoardVO boardVO) {
 		return (List<BoardVO>) list("BBSArticle.selectNoticeArticleList", boardVO);
 	}
 	
+	@SuppressWarnings("deprecation")
 	public List<?> selectGuestArticleList(BoardVO vo) {
 		return list("BBSArticle.selectGuestArticleList", vo);
 	}
@@ -68,10 +71,12 @@ public class EgovArticleDAO extends EgovComAbstractDAO {
 		return (BoardVO) selectOne("BBSArticle.selectArticleCnOne", boardVO);
 	}
 	
+	@SuppressWarnings({ "unchecked", "deprecation" })
 	public List<BoardVO> selectBlogNmList(BoardVO boardVO) {
 		return (List<BoardVO>) list("BBSArticle.selectBlogNmList", boardVO);
 	}
 	
+	@SuppressWarnings("deprecation")
 	public List<?> selectBlogListManager(BoardVO vo) {
 		return list("BBSArticle.selectBlogListManager", vo);
 	}
@@ -80,6 +85,7 @@ public class EgovArticleDAO extends EgovComAbstractDAO {
 		return (Integer)selectOne("BBSArticle.selectBlogListManagerCnt", vo);
 	}
 	
+	@SuppressWarnings({ "deprecation", "unchecked" })
 	public List<BoardVO> selectArticleDetailDefault(BoardVO boardVO) {
 		return (List<BoardVO>) list("BBSArticle.selectArticleDetailDefault", boardVO);
 	}
@@ -88,6 +94,7 @@ public class EgovArticleDAO extends EgovComAbstractDAO {
 		return (Integer)selectOne("BBSArticle.selectArticleDetailDefaultCnt", boardVO);
 	}
 	
+	@SuppressWarnings({ "deprecation", "unchecked" })
 	public List<BoardVO> selectArticleDetailCn(BoardVO boardVO) {
 		return (List<BoardVO>) list("BBSArticle.selectArticleDetailCn", boardVO);
 	}

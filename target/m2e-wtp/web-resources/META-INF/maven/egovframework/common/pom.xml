@@ -18,6 +18,8 @@
     <properties>
         <spring.maven.artifact.version>4.3.22.RELEASE</spring.maven.artifact.version>
         <egovframework.rte.version>3.9.0</egovframework.rte.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+ 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <repositories>
@@ -479,7 +481,8 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.31</version>
+<!--             <version>5.1.31</version> -->
+            <version>8.0.21</version>
         </dependency>
         
 		<dependency>
@@ -536,29 +539,38 @@
             <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/cubrid_jdbc.jar</systemPath>
         </dependency>
  		-->
-        <!--  M-Gov (SMS Service API) -->
-        <dependency>
-            <groupId>kr.go.mgov</groupId>
-            <artifactId>smeapi</artifactId>
-            <version>2.7</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/smeapi_2_7.jar</systemPath>
-        </dependency>
-        <!-- GPKI인증서 로그인처리 라이브러리 -->         
-        <dependency>
-            <groupId>kr.go.gpki</groupId>
-            <artifactId>gpkisecureweb</artifactId>
-            <version>1.0.4.9</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/gpkisecureweb-1.0.4.9.jar</systemPath>
-        </dependency>        
-        <dependency>
-            <groupId>kr.go.gpki</groupId>
-            <artifactId>libgpkiapi_jni</artifactId>
-            <version>1.4.0.0</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/libgpkiapi_jni-1.4.0.0.jar</systemPath>
-        </dependency>
+<!--          M-Gov (SMS Service API) -->
+<!--         <dependency> -->
+<!--             <groupId>kr.go.mgov</groupId> -->
+<!--             <artifactId>smeapi</artifactId> -->
+<!--             <version>2.7</version> -->
+<!--             <scope>system</scope> -->
+<!--             <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/smeapi_2_7.jar</systemPath> -->
+<!--         </dependency> -->
+<!--         GPKI인증서 로그인처리 라이브러리          -->
+<!--         <dependency> -->
+<!--             <groupId>kr.go.gpki</groupId> -->
+<!--             <artifactId>gpkisecureweb</artifactId> -->
+<!--             <version>1.0.4.9</version> -->
+<!--             <scope>system</scope> -->
+<!--             <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/gpkisecureweb-1.0.4.9.jar</systemPath> -->
+<!--         </dependency>         -->
+<!--         <dependency> -->
+<!--             <groupId>kr.go.gpki</groupId> -->
+<!--             <artifactId>libgpkiapi_jni</artifactId> -->
+<!--             <version>1.4.0.0</version> -->
+<!--             <scope>system</scope> -->
+<!--             <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/libgpkiapi_jni-1.4.0.0.jar</systemPath> -->
+<!--         </dependency> -->
+
+
+			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
+			<dependency>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-war-plugin</artifactId>
+			    <version>2.2</version>
+			</dependency>
+
         <!-- 3rd party 라이브러리로 별도의 설치 필요 끝 -->
 
         <!-- 공통컴포넌트 끝 -->
@@ -630,6 +642,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
                 <configuration>
                     <skipTests>false</skipTests>
                     <forkMode>once</forkMode>
